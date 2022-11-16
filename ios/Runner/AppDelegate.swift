@@ -14,8 +14,12 @@ import Flutter
           flutterChannel.setMethodCallHandler({
              (call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in
               
+              // guard let args = call.arguments as? [String : Any] else {return}
+              // let param1 = args["param1"] as! String;
+
               if(call.method == "getMessage"){
 //                   Return from success
+                  // result ("Received callback from iOS \(param1) ")
                   result ("Received callback from iOS")
                   
 //                  If i want to through Error
@@ -31,7 +35,7 @@ import Flutter
                          // Call the desired channel message here.
                        }
                        
-                       flutterChannel.invokeMethod("fromNative", arguments: "{\"message\":\"Hello from native\"}")
+                       flutterChannel.invokeMethod("fromNative", arguments: "{\"message\":\"Hello from native iOS\"}")
                    }
                    
                })

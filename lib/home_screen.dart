@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> getMessageFromNative() async {
     try {
-      message = await platform.invokeMethod("getMessage", {"param1": 1});
+      message = await platform.invokeMethod("getMessage", {"param1": 22});
     } on PlatformException catch (e) {
       message = "failed to call getMessage $e";
     }
